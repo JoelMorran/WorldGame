@@ -1,9 +1,8 @@
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
--->
- <!-- <script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+ <script>
   $.ajax({
     headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
-    url: 'http://api.football-data.org/v1/teams/445/fixtures?timeFrame=p5',
+    url: 'http://api.football-data.org/v1/competitions/459/leagueTable',
     dataType: 'json',
     type: 'GET'
   }).done(function (response) {
@@ -17,7 +16,7 @@
 
 
     $.each(response.standing, function (i, f) {
-      var tblRow = "<tr>" + "<td>" + f.position + "</td>" + "<td>" + f.teamName + "</td>" + "<td>" + f.playedGames +
+      var tblRow = "<tr>" + "</td>" + "<td>" + f.teamName + "</td>" + "<td>" + f.playedGames +
         "</td>" + "<td>" + "<img src= " + f.crestURI + " height=100 width=100></img>" + "</td>" + "<td>" + f.points + "</td>" +
         "<td>" + f.goals + "</td>" + "<td>" + f.goalsAgainst + "</td>" +
         "<td>" + f.goalDifference + "</td>" + "</tr>"
@@ -36,10 +35,7 @@
   }); 
 </script>
 
-
--->
-
-<img src= "http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg";>
+<!--<img src= "http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg";>-->
 
 
 <div class="wrapper">
@@ -47,7 +43,6 @@
     <table id="datdata" border="2">
       <thead>
 
-        <th>position</th>
         <th>teamName</th>
         <th>playedGames</th>
         <th>crestURI</th>
