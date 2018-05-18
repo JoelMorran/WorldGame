@@ -1,3 +1,94 @@
-<p>
-  competitions works!
-</p>
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+	text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6977942731603442",
+    enable_page_level_ads: true
+  });
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+$.ajax({
+  headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
+  url: 'http://api.football-data.org/v1/competitions/459/teams/',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  // do something with the response, e.g. isolate the id of a linked resource        
+  var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
+  //var res = regex.exec(response.fixtures[0]._links.awayTeam.href);
+  //var teamId = res[1];
+  console.log(response);
+  
+ 
+
+   
+       $.each(response.teams, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.name + "</td>" + "<td>" + f.code + "</td>" + "<td>" + f.shortName + 
+		   "</td>" + "<td>" + f.squadMarketValue + "</td>"+ "<td>" + "<img src= " + f.crestUrl + " height=100 width=100></img>"+"</td>"+ "</tr>"
+           $(tblRow).appendTo("#datdata tbody");
+     });
+
+   
+   
+   <!-- -->
+  
+  
+  
+  
+  
+  
+}); 
+</script>
+
+
+</script>
+</head>
+
+<body>
+<!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
+
+
+<div class="wrapper" style="overflow-x:auto;">
+<div class="profile">
+<table id= "datdata" border="2">
+<thead>
+
+	<th>name</th>
+	<th>code</th>
+	<th>shortName</th>
+	<th>squadMarketValue</th>
+	<th>crestUrl</th>
+	
+	
+	<!--<img src=https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg>-->
+  
+</thead>
+<tbody>
+
+       </tbody>
+</table>
+
+</div>
+</div>
+ 
+
+
+</body>
+</html>
