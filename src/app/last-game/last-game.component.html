@@ -1,62 +1,123 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- <script>
-  $.ajax({
-    headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
-    url: 'http://api.football-data.org/v1/competitions/459/leagueTable',
-    dataType: 'json',
-    type: 'GET'
-  }).done(function (response) {
-    // do something with the response, e.g. isolate the id of a linked resource        
-    var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
-    //var res = regex.exec(response.fixtures[0]._links.awayTeam.href);
-    //var teamId = res[1];
-    //console.log(response);
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+th, td {
+    text-align: left;
+    padding: 8px;
+}
 
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6977942731603442",
+    enable_page_level_ads: true
+  });
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
+<script>
+$.ajax({
+  headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
+  url: 'http://api.football-data.org/v1/teams/445/fixtures?timeFrame=p5',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  // do something with the response, e.g. isolate the id of a linked resource        
+  var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
+  //var res = regex.exec(response.fixtures[0]._links.awayTeam.href);
+  //var teamId = res[1];
+  response=response.fixtures;
+  console.log(response);
+  
+ 
+all=0;
+       $.each(response, function(i, f) {
+	   all+=1;
+     });
+   
+       $.each(response, function(i, f) {
+	  // console.log(f);
+	  // console.log(f.result);
+          var tblRow = "<tr>" + "<td>" + new Date(f.date) + "</td>" + "<td>" + f.status + "</td>" + "<td>" + f.matchday + 
+		   "</td>" + "<td>" + f.homeTeamName + "</td>" +
+		   "<td>" + f.awayTeamName + "</td>" + "<td>" + f.result.goalsHomeTeam + "</td>" + "<td>" + f.result.goalsAwayTeam + "</td>" +
+		   "<td>";
+			if(f.result.halfTime){
+				tblRow+=
+		   f.result.halfTime.goalsHomeTeam + "</td>" + "<td>" + f.result.halfTime.goalsHomeTeam + "</td>" +"<td>";
+				}
+			else{
+				tblRow+=
+		   "N/A" + "</td>" + "<td>" + "N/A" + "</td>" +"<td>";
+				}
+			if(f.odds){
+				tblRow+=f.odds.homeWin + "</td>" + "<td>" + f.odds.draw + "</td>" + "<td>" + f.odds.awayWin + "</td>" + "</tr>";
+				}
+			else{
+				tblRow+="N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "</tr>";
+				}
+		   if(i>=(all-1)){
+				$(tblRow).appendTo("#datdata tbody");
+			}
+     });
 
-    $.each(response.standing, function (i, f) {
-      var tblRow = "<tr>" + "</td>" + "<td>" + f.teamName + "</td>" + "<td>" + f.playedGames +
-        "</td>" + "<td>" + "<img src= " + f.crestURI + " height=100 width=100></img>" + "</td>" + "<td>" + f.points + "</td>" +
-        "<td>" + f.goals + "</td>" + "<td>" + f.goalsAgainst + "</td>" +
-        "<td>" + f.goalDifference + "</td>" + "</tr>"
-      $(tblRow).appendTo("#datdata tbody");
-    });
-
-
-
-
-
-
-
-
-
-
-  }); 
+   
+   
+   <!-- -->
+  
+  response['standing']['0']['wins']
+  
+  
+  <!--IF F.STATUS === FINISHED THEN SHOW IF NOT DONT SHOW ONLY SHOW LAST GAME THERE CAN BE TIMED GAMES WE DONT WANT THAT-->
+  
+  
+}); 
 </script>
 
-<!--<img src= "http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg";>-->
+
+</script>
+</head>
+
+<body>
+<!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
 
-<div class="wrapper">
-  <div class="profile">
-    <table id="datdata" border="2">
-      <thead>
+<div class="wrapper" style="overflow-x:auto;">
+<div class="profile">
+<table id= "datdata" border="2">
+<thead>
 
-        <th>teamName</th>
-        <th>playedGames</th>
-        <th>crestURI</th>
-        <th>points</th>
-        <th>goals</th>
-        <th>goalsAgainst</th>
-        <th>goalDifference</th>
-        <!--<img src=https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg>-->
+	<th>date</th>
+	<th>status</th>
+	<th>matchday</th>
+	<th>homeTeamName</th>
+	<th>awayTeamName</th>	
+	<th>goalsHomeTeam</th>
+	<th>goalsAwayTeam</th>
+	<th>halftimegoalsHomeTeam</th>
+	<th>halftimeawaygoals</th>
+	<th>oddshomeWin</th>
+	<th>oddsdraw</th>
+	<th>oddsawayWin</th>
+	<!--<img src=https://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg>-->
+  
+</thead>
+<tbody>
 
-      </thead>
-      <tbody>
+       </tbody>
+</table>
 
-      </tbody>
-    </table>
-
-  </div>
 </div>
+</div>
+ 
+
+
+</body>
+</html>
