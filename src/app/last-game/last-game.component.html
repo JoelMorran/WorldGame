@@ -1,47 +1,97 @@
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977942731603442",
-    enable_page_level_ads: true
-  });
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6977942731603442",
+		enable_page_level_ads: true
+	});
 </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
-<script>
-$.ajax({
-  headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
-  url: 'http://api.football-data.org/v1/teams/445/fixtures?timeFrame=p5',
-  dataType: 'json',
-  type: 'GET',
-}).done(function(response) {
-  // do something with the response, e.g. isolate the id of a linked resource        
-  var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
-  //var res = regex.exec(response.fixtures[0]._links.awayTeam.href);
-  //var teamId = res[1];
-  response=response.fixtures;
-  console.log(response);
-  
- 
-all=0;
-       $.each(response, function(i, f) {
-	   all+=1;
-     });
-   
-       $.each(response, function(i, f) {
-	  // console.log(f);
-	  // console.log(f.result);
-          var tblRow = "<tr>" + "<td>" + new Date(f.date) + "</td>" + "<td>" + f.status + "</td>" + "<td>" + f.matchday + 
-		   "</td>" + "<td>" + f.homeTeamName + "</td>" +
-		   "<td>" + f.awayTeamName + "</td>" + "<td>" + f.result.goalsHomeTeam + "</td>" + "<td>" + f.result.goalsAwayTeam + "</td>" +
-		   "<td>";
+<div id="ChildDiv">
+	
+		<table>
+			<tr>
+				<th>date</th>
+				<th>status</th>
+				<th>matchday</th>
+				<th>homeTeamName</th>
+				<th>awayTeamName</th>
+				<th>goalsHomeTeam</th>
+				<th>goalsAwayTeam</th>
+				<th>halftimegoalsHomeTeam</th>
+				<th>halftimeawaygoals</th>
+				<th>oddshomeWin</th>
+				<th>oddsdraw</th>
+				<th>oddsawayWin</th>
+			</tr>
+			
+
+			<tr *ngFor="let lastGame of lastGames">
+				<td> {{lastGame.date}} </td>
+				<td> {{lastGame.status}}</td>
+				<td> {{lastGame.homeTeamName}} </td>
+				<td> {{lastGame.awayTeamName}} </td>
+				<td> {{lastGame.result.goalsHomeTeam}} </td>
+				<td> {{lastGame.result.goalsAwayTeam}} </td>
+				<td> {{lastGame.result.halfTime.goalsHomeTeam}} </td>
+				<td> {{lastGame.result.halfTime.goalsAwayTeam}} </td>
+				<td> {{lastGame.odds.homeWin}} </td>
+				<td> {{lastGame.odds.draw}} </td>
+				<td> {{lastGame.odds.awayWin}} </td>
+				
+				
+
+
+
+
+
+
+
+				<!--<td *ngIf="lastGame.result.halfTime != null"> {{lastGame.result.halfTime}} </td> 
+					<td> {{lastGame.result.halfTime.goalsAwayTeam}}; </td> <td>
+					
+				<td *ngIf="lastGame.result.halfTime == null">	
+					
+					 {{"N/A"}} </td> <td> {{"N/A"}} </td> <td>;
+				
+					*ngIf={{lastGame.odds}}; then {{lastGame.odds.homeWin}} </td>
+					 <td> {{lastGame.odds.draw}} </td> <td> {{lastGame.odds.awayWin}} </td> </tr>;
+						
+					else {{"N/A"}} </td> <td> {{"N/A"}} </td> <td> {{"N/A"}} </td> </tr>;
+						
+					 *ngIf(  i >= ( all - 1 )){
+						$(tblRow).appendTo("tr");
+					}-->
+			
+				
+				
+				<!--<td><img src="{{team.crestURL}}" /> </td>-->
+			</tr>
+			
+		</table>
+
+	
+</div>
+
+<!--
+			 $.each(response, function(i, f) {
+		 all+=1;
+		 });
+	 
+			 $.each(response, function(i, f) {
+		// console.log(f);
+		// console.log(f.result);
+					var tblRow = "<tr>" + "<td>" + new Date(f.date) + "</td>" + "<td>" + f.status + "</td>" + "<td>" + f.matchday + 
+			 "</td>" + "<td>" + f.homeTeamName + "</td>" +
+			 "<td>" + f.awayTeamName + "</td>" + "<td>" + f.result.goalsHomeTeam + "</td>" + "<td>" + f.result.goalsAwayTeam + "</td>" +
+			 "<td>";
 			if(f.result.halfTime){
 				tblRow+=
-		   f.result.halfTime.goalsHomeTeam + "</td>" + "<td>" + f.result.halfTime.goalsAwayTeam + "</td>" +"<td>";
+			 f.result.halfTime.goalsHomeTeam + "</td>" + "<td>" + f.result.halfTime.goalsAwayTeam + "</td>" +"<td>";
 				}
 			else{
 				tblRow+=
-		   "N/A" + "</td>" + "<td>" + "N/A" + "</td>" +"<td>";
+			 "N/A" + "</td>" + "<td>" + "N/A" + "</td>" +"<td>";
 				}
 			if(f.odds){
 				tblRow+=f.odds.homeWin + "</td>" + "<td>" + f.odds.draw + "</td>" + "<td>" + f.odds.awayWin + "</td>" + "</tr>";
@@ -49,27 +99,34 @@ all=0;
 			else{
 				tblRow+="N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "</tr>";
 				}
-		   if(i>=(all-1)){
+				var number, i;
+			 if(  i >= ( all - 1 )){
 				$(tblRow).appendTo("#datdata tbody");
 			}
-     });
+		 });
 
-   
+		 <table>
+		
+		 <tr *ngFor= "let team of teams">
+		 <td>
+		 <td> team.crstURl</td>
+		 <td> </td>
+		 </tr>
+		 </table>
 
-  
-  //response['standing']['0']['wins']
-  
-  
-  //IF F.STATUS === FINISHED THEN SHOW IF NOT DONT SHOW ONLY SHOW LAST GAME THERE CAN BE TIMED GAMES WE DONT WANT THAT-->
-  
-  
-}); 
-</script>
+	 
 
-<!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
+	
+	//response['standing']['0']['wins']
+	
+	
+	//IF F.STATUS === FINISHED THEN SHOW IF NOT DONT SHOW ONLY SHOW LAST GAME THERE CAN BE TIMED GAMES WE DONT WANT THAT-->
 
 
-<div class="wrapper" style="overflow-x:auto;">
+
+
+
+<!-- <div class="wrapper" style="overflow-x:auto;"> 
 <div class="profile">
 <table id= "datdata" border="2">
 <thead>
@@ -94,5 +151,4 @@ all=0;
 </table>
 
 </div>
-</div>
- 
+</div>-->
