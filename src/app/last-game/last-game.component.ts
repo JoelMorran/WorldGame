@@ -19,11 +19,11 @@ export class LastGameComponent implements OnInit {
     this.teamService.getLastGame().subscribe(temp => this.lastGames = temp);
   }
   ngOnInit() {
-    
-    console.log(this.getLastGames());
-   /* console.log("i'm running!");
-    this.getLastGames();
-   let game = this.lastGames;
+    console.log("i'm running!");
+   
+    this.support(this.lastGames);
+   /*let game = this.lastGames;
+   console.log(game);
    for(let i=0; i<game.length; i++){
      game[i].date=new Date(game[i].date);
      if(!game[i].result.halfTime){
@@ -35,7 +35,9 @@ export class LastGameComponent implements OnInit {
    }
 
    this.lastGames=[game[game.length-1]];
-   //console.log(game);
+   //console.log(game);*/
+
+
     
    /* $.ajax({
       headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
@@ -58,7 +60,7 @@ export class LastGameComponent implements OnInit {
            $.each(response, function(i, f) {
          all+=1;
          });
-       
+       sole.log(g
            $.each(response, function(i, f) {
         // console.log(f);
         // console.log(f.result);
@@ -105,6 +107,10 @@ export class LastGameComponent implements OnInit {
       
     });
 */
+  }
+
+  support(game){
+    console.log(this.lastGames);
   }
 
 }
