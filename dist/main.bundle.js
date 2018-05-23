@@ -423,7 +423,7 @@ var LastGameComponent = /** @class */ (function () {
     };
     LastGameComponent.prototype.ngOnInit = function () {
         console.log("i'm running!");
-        this.support(this.lastGames[0]);
+        this.support(this.lastGames);
         /*let game = this.lastGames;
         console.log(game);
         for(let i=0; i<game.length; i++){
