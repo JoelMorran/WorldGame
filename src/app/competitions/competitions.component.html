@@ -13,8 +13,37 @@
 
 <!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
+<div id="ChildDiv">
+	
+  <table>
+    <tr>
+      <th>name</th>
+      <th>code</th>
+      <th>shortName</th>
+      <th>squadMarketValue</th>
+      <th>crestUrl</th>
+      
+    </tr>
+    
 
-<div class="wrapper" style="overflow-x:auto;">
+    <tr *ngFor="let competitions of competitionss.teams">
+      <td> {{competitions.name}} </td>
+      <td> {{competitions.code}}</td>
+      <td> {{competitions.shortName}} </td>
+      <td> {{competitions.squadMarketValue}} </td>
+      <td> <img src="{{competitions.crestUrl}}" /> </td>
+      
+      
+    </tr>
+    
+  </table>
+
+
+</div>
+
+
+
+<!--<div class="wrapper" style="overflow-x:auto;">
 <div class="profile">
 <table id= "datdata" border="2">
 <thead>
@@ -35,6 +64,6 @@
 </table>
 
 </div>
-</div>
+</div>-->
  
 

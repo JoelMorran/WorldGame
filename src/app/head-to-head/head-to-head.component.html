@@ -1,3 +1,38 @@
-<p>
-  head-to-head works!
-</p>
+<div id="ChildDiv">
+	
+  <table>
+    <tr>
+      <th>date</th>
+      <th>status</th>
+      <th>matchday</th>
+      <th>homeTeamName</th>
+      <th>awayTeamName</th>
+      <th>goalsHomeTeam</th>
+      <th>goalsAwayTeam</th>
+      <th>halftimegoalsHomeTeam</th>
+      <th>halftimeawaygoals</th>
+      <th>oddshomeWin</th>
+      <th>oddsdraw</th>
+      <th>oddsawayWin</th>
+    </tr>
+    
+
+    <tr *ngFor="let HeadToHead of HeadToHeads.fixtures">
+      <td> {{HeadToHead.date}} </td>
+      <td> {{HeadToHead.status}}</td>
+      <td> {{HeadToHead.homeTeamName}} </td>
+      <td> {{HeadToHead.awayTeamName}} </td>
+      <td> {{HeadToHead.result.goalsHomeTeam}} </td>
+      <td> {{HeadToHead.result.goalsAwayTeam}} </td>
+      <td> {{HeadToHead.result.halfTime.goalsHomeTeam}} </td>
+      <td> {{HeadToHead.result.halfTime.goalsAwayTeam}} </td>
+      <td> {{HeadToHead.odds.homeWin}} </td>
+      <td> {{HeadToHead.odds.draw}} </td>
+      <td> {{HeadToHead.odds.awayWin}} </td>
+      
+    </tr>
+    
+  </table>
+
+
+</div>

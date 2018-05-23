@@ -14,8 +14,68 @@
 
 <!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
+<div id="ChildDiv">
+	
+	<table>
+		<tr>
+			<th>position</th>
+			<th>teamName</th>
+			<th>crestURI</th>
+			<th>playedGames</th>
+			<th>points</th>
+			<th>goals</th>
+			<th>goalsAgainst</th>
+			<th>goalDifference</th>
+			<th>wins</th>
+			<th>draws</th>
+			<th>losses</th>
+			<th>home.goals</th>
+			<th>home.goalsAgainst</th>
+			<th>home.wins</th>
+			<th>home.draws</th>
+			<th>home.losses</th>
+			<th>away.goals</th>
+			<th>away.goalsAgainst</th>
+			<th>away.wins</th>
+			<th>away.draws</th>
+			<th>away.losses</th>
+			
+		</tr>
+		
 
-<div class="wrapper">
+		<tr *ngFor="let leagueTable of leagueTables.standing">
+			<td> {{leagueTable.position}} </td>
+			<td> {{leagueTable.teamName}}</td>
+			<td> <img src="{{leagueTable.crestURI}}" /> </td>
+			<td> {{leagueTable.playedGames}} </td>
+			<td> {{leagueTable.points}} </td>
+			<td> {{leagueTable.goals}} </td>
+			<td> {{leagueTable.goalsAgainst}} </td>
+			<td> {{leagueTable.goalDifference}} </td>
+			<td> {{leagueTable.wins}} </td>
+			<td> {{leagueTable.draws}} </td>
+			<td> {{leagueTable.losses}} </td>
+			<td> {{leagueTable.home.goals}} </td>
+			<td> {{leagueTable.home.goalsAgainst}}</td>
+			<td> {{leagueTable.home.wins}} </td>
+			<td> {{leagueTable.home.draws}} </td>
+			<td> {{leagueTable.home.losses}} </td>
+			<td> {{leagueTable.away.goals}} </td>
+			<td> {{leagueTable.away.goalsAgainst}} </td>
+			<td> {{leagueTable.away.wins}} </td>
+			<td> {{leagueTable.away.draws}} </td>
+			<td> {{leagueTable.away.losses}} </td>
+			
+			
+		</tr>
+		
+	</table>
+
+
+</div>
+
+
+<!--<div class="wrapper">
 <div class="profile">
 <table id= "datdata" border="2">
 <thead>
@@ -49,7 +109,7 @@
 </table>
 
 </div>
-</div>
+</div>-->
  
 
 

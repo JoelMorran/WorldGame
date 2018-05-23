@@ -19,10 +19,11 @@ export class LastGameComponent implements OnInit {
     this.teamService.getLastGame().subscribe(temp => this.lastGames = temp);
   }
   ngOnInit() {
+    this.getLastGames();
     console.log("i'm running!");
    
     this.support(this.lastGames);
-   /*let game = this.lastGames;
+   let game = this.lastGames;
    console.log(game);
    for(let i=0; i<game.length; i++){
      game[i].date=new Date(game[i].date);
@@ -35,7 +36,7 @@ export class LastGameComponent implements OnInit {
    }
 
    this.lastGames=[game[game.length-1]];
-   //console.log(game);*/
+   //console.log(game);
 
 
     

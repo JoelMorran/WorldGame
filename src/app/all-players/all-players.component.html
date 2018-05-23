@@ -11,10 +11,44 @@
 <script>
 
 </script>
+
+<div id="ChildDiv">
+	
+	<table>
+		<tr>
+			<th>name</th>
+			<th>position</th>
+			<th>jerseyNumber</th>
+			<th>dateOfBirth</th>
+			<th>nationality</th>
+			<th>contractUntil</th>
+			<th>marketValue</th>
+			
+		</tr>
+		
+
+		<tr *ngFor="let allPlayers of allPlayerss.players">
+			<td> {{allPlayers.name}} </td>
+			<td> {{allPlayers.position}}</td>
+			<td> {{allPlayers.jerseyNumber}} </td>
+			<td> {{allPlayers.dateOfBirth}} </td>
+			<td> {{allPlayers.nationality}} </td>
+			<td> {{allPlayers.contractUntil}} </td>
+			<td> {{allPlayers.marketValue}} </td>
+			
+			
+		</tr>
+		
+	</table>
+
+
+</div>
+
+
 <!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
 
-<div class="wrapper" style="overflow-x:auto;">
+<!--<div class="wrapper" style="overflow-x:auto;">
 <div class="profile">
 <table id= "datdata" border="2">
 <thead>
@@ -36,6 +70,6 @@
 </table>
 
 </div>
-</div>
+</div>-->
  
 

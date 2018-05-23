@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '../../team.service';
 
 @Component({
   selector: 'app-competitions',
@@ -7,11 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompetitionsComponent implements OnInit {
 
-  constructor() { }
+  selectedCompetitions: any;
 
+  competitionss : any[];
+
+  constructor(private teamService: TeamService) { }
+  //constructor() { }
+  
+  getCompetitions(){
+    this.teamService.getCompetitions().subscribe(temp => this.competitionss = temp);
+  }
   ngOnInit() {
+    console.log("i'm running!");
+    this.getCompetitions();
+   
+   // this.support(this.lastGames);
+   /*let game = this.lastGames;
+   console.log(game);
+   for(let i=0; i<game.length; i++){
+     game[i].date=new Date(game[i].date);
+     if(!game[i].result.halfTime){
+       game[i].result.halfTime={goalsHomeTeam:"N/A",goalsAwayTeam:"N/A"};
+     }
+     if(!game[i].odds){
+       game[i].odds={homeWin:"N/A",awayWin:"N/A",draw:"N/A"};
+     }
+   }
 
-    $.ajax({
+   this.lastGames=[game[game.length-1]];
+   //console.log(game);*/
+
+
+
+
+
+
+
+   /* $.ajax({
       headers: { 'X-Auth-Token': 'e0c7693a8b2f4529b4f2ba779d64ab4a' },
       url: 'http://api.football-data.org/v1/competitions/459/teams/',
       dataType: 'json',
@@ -41,7 +74,7 @@ export class CompetitionsComponent implements OnInit {
       
       
       
-    }); 
+    }); */
 
 
   }

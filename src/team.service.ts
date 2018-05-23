@@ -5,8 +5,6 @@ import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/operators/map';
 
-
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -16,13 +14,11 @@ const httpOptions = {
     'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS, HEAD'
   })
 };
+
 let headers = new HttpHeaders().set('X-Auth-Token', 'e0c7693a8b2f4529b4f2ba779d64ab4a'); 
 
 @Injectable()
 export class TeamService {
- 
-
-
 
 private teamsUrl = 'http://api.football-data.org/v1';
 
@@ -33,7 +29,51 @@ private teamsUrl = 'http://api.football-data.org/v1';
 getLastGame(): Observable<any[]> {
   return this.http.get<any[]>(this.teamsUrl +
      '/teams/445/fixtures', {headers});
+
 }
+
+getAllPlayers(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/teams/445/players', {headers});
+
+}
+
+getCompetitions(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/competitions/459/teams/', {headers});
+
+}
+
+getHeadToHead(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '', {headers});
+
+}
+
+getLeagueTable(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/competitions/459/leagueTable', {headers});
+
+}
+
+getMyTeam(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/teams/445', {headers});
+
+}
+
+getPerformance(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/teams/445/fixtures?timeFrame=p5', {headers});
+
+}
+
+getSeason(): Observable<any[]> {
+  return this.http.get<any[]>(this.teamsUrl +
+     '/teams/445/fixtures?season=2017', {headers});
+
+}
+
 /*getLeagueTable(){
   return this.http.get<Team[]>(this.teamsUrl+'whatever';
 }*/
