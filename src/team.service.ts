@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/operators/map';
+import { LastGame } from '../src/app/last-game'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -26,8 +27,8 @@ private teamsUrl = 'http://api.football-data.org/v1';
 
 
 /** GET teams from the server */
-getLastGame(): Observable<any[]> {
-  return this.http.get<any[]>(this.teamsUrl +
+getLastGame(): Observable<LastGame[]> {
+  return this.http.get<LastGame[]>(this.teamsUrl +
      '/teams/445/fixtures', {headers});
 
 }

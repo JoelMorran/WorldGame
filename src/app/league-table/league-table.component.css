@@ -1,11 +1,25 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
 
-th, td {
-    text-align: left;
+tr, td {
+    text-align: center;
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: rgb(165, 165, 165)}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 400px;
+    overflow-x:20px;
+    overflow-y:30px;
+    border-spacing: 0;
+    max-width: 100%;
+    max-height: 1000px;
+    display: block;
+}
+
+div { 
+    overflow-y:auto;
+    overflow-x:auto;
+    
+    }

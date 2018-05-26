@@ -25,19 +25,20 @@
 				<th>oddsawayWin</th>
 			</tr>
 			
-
 			<tr *ngFor="let lastGame of lastGames.fixtures">
+				
 				<td> {{lastGame.date}} </td>
 				<td> {{lastGame.status}}</td>
+				<td> {{lastGame.matchday}}</td>
 				<td> {{lastGame.homeTeamName}} </td>
 				<td> {{lastGame.awayTeamName}} </td>
 				<td> {{lastGame.result.goalsHomeTeam}} </td>
 				<td> {{lastGame.result.goalsAwayTeam}} </td>
 				<td> {{lastGame.result.halfTime.goalsHomeTeam}} </td>
 				<td> {{lastGame.result.halfTime.goalsAwayTeam}} </td>
-				<td> {{lastGame.odds.homeWin}} </td>
-				<td> {{lastGame.odds.draw}} </td>
-				<td> {{lastGame.odds.awayWin}} </td>
+				<td> {{lastGame.result.odds.homeWin}} </td>
+				<td> {{lastGame.result.odds.draw}} </td>
+				<td> {{lastGame.result.odds.awayWin}} </td>
 				
 				
 

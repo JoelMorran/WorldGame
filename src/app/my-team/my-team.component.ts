@@ -18,10 +18,18 @@ export class MyTeamComponent implements OnInit {
   getMyTeam(){
     this.teamService.getMyTeam().subscribe(temp => this.myTeams = temp);
   }
+
   ngOnInit() {
     console.log("i'm running!");
-    this.getMyTeam();
+    
    
+    let game = this.getMyTeam();
+    
+      if(game[0].squadMarketValue == 'null'){
+        game[0].squadMarketValue={squadMarketValue:"N/A"};
+      }
+    
+
     //this.support(this.lastGames);
    /*let game = this.lastGames;
    console.log(game);

@@ -1,4 +1,4 @@
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -46,7 +46,7 @@
 		<tr *ngFor="let leagueTable of leagueTables.standing">
 			<td> {{leagueTable.position}} </td>
 			<td> {{leagueTable.teamName}}</td>
-			<td> <img src="{{leagueTable.crestURI}}" /> </td>
+			<td> <img src="{{leagueTable.crestURI}}" alt="No IMG supplied for this team in json data" height=100 width=100/> </td>
 			<td> {{leagueTable.playedGames}} </td>
 			<td> {{leagueTable.points}} </td>
 			<td> {{leagueTable.goals}} </td>
@@ -73,7 +73,12 @@
 
 
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!--<div class="wrapper">
 <div class="profile">

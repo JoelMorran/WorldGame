@@ -12,11 +12,16 @@ export class SeasonComponent implements OnInit {
 
   seasons : any[];
 
+  contentLoad: boolean = false;
+
   constructor(private teamService: TeamService) { }
   //constructor() { }
   
   getSeason(){
-    this.teamService.getSeason().subscribe(temp => this.seasons = temp);
+    this.teamService.getSeason().subscribe(
+      temp => this.seasons = temp,
+      err => console.log(err),
+      () => console.log(this.seasons));
   }
   ngOnInit() {
     console.log("i'm running!");

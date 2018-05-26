@@ -3,8 +3,8 @@ table {
     width: 100%;
 }
 
-th, td {
-    text-align: left;
+tr, td {
+    text-align: center;
     padding: 8px;
 }
 

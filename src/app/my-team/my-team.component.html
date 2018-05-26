@@ -1,4 +1,3 @@
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -13,7 +12,7 @@
 <!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
 <div id="ChildDiv">
-	
+
   <table>
     <tr>
       <th>name</th>
@@ -21,20 +20,22 @@
       <th>shortName</th>
       <th>squadMarketValue</th>
       <th>crestUrl</th>
-      
-    </tr>
-    
 
-    <tr *ngFor="let myTeam of myTeams">
-      <td> {{myTeam.name}} </td>
-      <td> {{myTeam.code}}</td>
-      <td> {{myTeam.shortName}} </td>
-      <td> {{myTeam.squadMarketValue}} </td>
-      <td> <img src="{{myTeam.crestUrl}}" /> </td>
-      
-      
     </tr>
-    
+
+
+    <!--<tr *ngFor="let myTeam of myTeams"-->
+    <tr>
+      <td> {{myTeams.name}} </td>
+      <td> {{myTeams.code}}</td>
+      <td> {{myTeams.shortName}} </td>
+      <td> {{myTeams.squadMarketValue}} </td>
+      <td>
+        <img src="{{myTeams.crestUrl}}" alt="No IMG supplied for this team in json data" height=100 width=100/> </td>
+
+
+    </tr>
+
   </table>
 
 
@@ -62,7 +63,3 @@
 
 </div>
 </div>-->
- 
-
-
-
