@@ -1274,7 +1274,7 @@ var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* Http
 var TeamService = /** @class */ (function () {
     function TeamService(http) {
         this.http = http;
-        this.teamsUrl = 'http://api.football-data.org/v1';
+        this.teamsUrl = 'https://api.football-data.org/v1';
     }
     /** GET teams from the server */
     TeamService.prototype.getLastGame = function () {
