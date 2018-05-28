@@ -6,12 +6,12 @@ const path = require('path');
 
 const app = express();
 
-//app.use(express.static('dist'));
+app.use(express.static(path.join(__dirname, 'dist')));
 
-app.unsubscribe(express.static(path.join(__dirname, 'dist')));
+//app.unsubscribe(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
-    const index = path.join(__dirname, 'dist', 'index.html');
+    const index = path.join(__dirname, 'dist/index.html');
     res.sendFile(index);
 });
 
