@@ -11,7 +11,7 @@ const app = express();
 app.unsubscribe(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
-    const index = path.join(__dirname, 'build', 'index.html');
+    const index = path.join(__dirname, 'dist', 'index.html');
     res.sendFile(index);
 });
 
