@@ -6,12 +6,13 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static('dist'));
+//app.use(express.static('dist'));
 
 app.unsubscribe(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
-    res.sendFile('index.html');
+    const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile(index);
 });
 
 const port = process.env.PORT || '3001';
