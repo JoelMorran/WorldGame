@@ -1,4 +1,5 @@
 import { Result } from '../app/result'
+import { Odds } from '../app/odds'
 
 
 export class LastGame {
@@ -9,7 +10,9 @@ export class LastGame {
         public status: string, 
         public homeTeamName: number, 
         public awayTeamName: number, 
-        public result: Result 
+        public result: Result,
+        public odds: Odds
+
        ) {}
     
     }

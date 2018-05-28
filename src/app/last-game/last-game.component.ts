@@ -23,24 +23,43 @@ export class LastGameComponent implements OnInit {
 
   constructor(private teamService: TeamService) { }
   //constructor() { }
+  
+  parseGames(temp){
+    this.lastGames = temp;
+    //console.log(temp['fixtures']);
+    let x = temp['fixtures'];
+    for(let t of x){
+      //console.log(t.date);
+      t.date = new Date(t.date);
+      //console.log(t.result['odds']);
+      if (t.odds != null) {
+        console.log(t.odds);
+      }
+      else{
+        t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
+      } 
+    }
+    //console.log(temp); 
+   /* for(let i = 0; i < temp.length; i++){
+      console.log(i);
+     temp[i].date = new Date(temp[i].date);
+      console.log("date");
+      if (!temp[i].result.halfTime) {
+        temp[i].result.halfTime = { goalsHomeTeam: "N/A", goalsAwayTeam: "N/A" };
+        console.log(temp.result);
+       /* if (this.lastGames[i].result.odds == null) {
+          this.lastGames[i].result.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" };
+        } 
+
+  } */
+  }
 
   getLastGames() {
     this.teamService.getLastGame().subscribe(
-      temp => this.lastGames = temp,
+      temp => this.parseGames(temp),
       err => console.log(err),
-      () => console.log(this.lastGames));
+      () => console.log());
 
-
-    for (let i = 0; i < this.lastGames.length; i++) {
-      this.lastGames[i].date = new Date(this.lastGames[i].date);
-      console.log("date");
-      if (!this.lastGames[i].result.halfTime) {
-        this.lastGames[i].result.halfTime = { goalsHomeTeam: "N/A", goalsAwayTeam: "N/A" };
-        if (this.lastGames[i].result.odds == null) {
-          this.lastGames[i].result.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" };
-        }
-
-      }
 
     }
     /*let game = this.lastGames;
@@ -50,7 +69,7 @@ export class LastGameComponent implements OnInit {
    console.log("date");
  }*/
 
-  }
+  
   ngOnInit() {
     this.getLastGames();
     /*console.log("i'm running!");
@@ -143,8 +162,8 @@ export class LastGameComponent implements OnInit {
  */
   }
 
-  support(game) {
+  /*support(game) {
     console.log(this.lastGames);
-  }
+  }*/
 
 }
