@@ -21,7 +21,7 @@ let headers = new HttpHeaders().set('X-Auth-Token', 'e0c7693a8b2f4529b4f2ba779d6
 @Injectable()
 export class TeamService {
 
-private teamsUrl = 'http://api.football-data.org/v1';
+private teamsUrl = 'https://api.football-data.org/v1';
 
   constructor(private http: HttpClient) { }
 
