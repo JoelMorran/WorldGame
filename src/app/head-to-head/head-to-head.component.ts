@@ -14,10 +14,38 @@ export class HeadToHeadComponent implements OnInit {
 
   constructor(private teamService: TeamService) { }
   //constructor() { }
+
+  parseGames(temp){
+    this.headToHeads = temp;
+    //console.log(temp['fixtures']);
+    let x = temp['fixtures'];
+    let y = [];
+    let otherTeam = "Ternana Calcio";
+    for(let t of x){
+      //console.log(t.date);
+      t.date = new Date(t.date);
+      //console.log(t.result['odds']);
+      if (t.odds != null) {
+        console.log(t.odds);
+        
+      }
+      else{
+        t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
+      }
+      if (t.awayTeamName==otherTeam || t.homeTeamName==otherTeam){
+        y.push(t);
+      } 
+    }
+     this.headToHeads['fixtures']=y;
+     console.log(this.headToHeads)
+  }
   
   getHeadToHead(){
-    this.teamService.getHeadToHead().subscribe(temp => this.headToHeads = temp);
+    this.teamService.getHeadToHead().subscribe(temp => this.parseGames(temp),
+    err => console.log(err),
+    () => console.log());
   }
+
   ngOnInit() {
     console.log("i'm running!");
     this.getHeadToHead();

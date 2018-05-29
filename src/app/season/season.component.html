@@ -36,15 +36,16 @@
 		<tr *ngFor="let season of seasons.fixtures">
 			<td> {{season.date}} </td>
 			<td> {{season.status}}</td>
+			<td> {{season.matchday}}</td>
 			<td> {{season.homeTeamName}} </td>
 			<td> {{season.awayTeamName}} </td>
 			<td> {{season.result.goalsHomeTeam}} </td>
 			<td> {{season.result.goalsAwayTeam}} </td>
 			<td> {{season.result.halfTime.goalsHomeTeam}} </td>
 			<td> {{season.result.halfTime.goalsAwayTeam}} </td>
-			<!--<td> {{season.odds.homeWin}} </td>
+			<td> {{season.odds.homeWin}} </td>
 			<td> {{season.odds.draw}} </td>
-			<td> {{season.odds.awayWin}} </td>-->
+			<td> {{season.odds.awayWin}} </td>
 			
 		</tr>
 		

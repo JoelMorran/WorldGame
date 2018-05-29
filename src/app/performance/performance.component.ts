@@ -14,9 +14,32 @@ export class PerformanceComponent implements OnInit {
 
   constructor(private teamService: TeamService) { }
   //constructor() { }
+
+
+  parseGames(temp){
+    this.performances = temp;
+    //console.log(temp['fixtures']);
+    let x = temp['fixtures'];
+    for(let t of x){
+      //console.log(t.date);
+      t.date = new Date(t.date);
+      //console.log(t.result['odds']);
+      if (t.odds != null) {
+        console.log(t.odds);
+        
+      }
+      else{
+        t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
+      } 
+    }
+     this.performances['fixtures']=x.slice(x.length-5);
+     console.log(this.performances)
+  }
   
   getPerformance(){
-    this.teamService.getPerformance().subscribe(temp => this.performances = temp);
+    this.teamService.getPerformance().subscribe( temp => this.parseGames(temp),
+    err => console.log(err),
+    () => console.log());
   }
   ngOnInit() {
     console.log("i'm running!");

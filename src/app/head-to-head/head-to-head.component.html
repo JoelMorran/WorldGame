@@ -16,19 +16,21 @@
       <th>oddsawayWin</th>
     </tr>
     
-
-    <tr *ngFor="let HeadToHead of HeadToHeads.fixtures">
-      <td> {{HeadToHead.date}} </td>
-      <td> {{HeadToHead.status}}</td>
-      <td> {{HeadToHead.homeTeamName}} </td>
-      <td> {{HeadToHead.awayTeamName}} </td>
-      <td> {{HeadToHead.result.goalsHomeTeam}} </td>
-      <td> {{HeadToHead.result.goalsAwayTeam}} </td>
-      <td> {{HeadToHead.result.halfTime.goalsHomeTeam}} </td>
-      <td> {{HeadToHead.result.halfTime.goalsAwayTeam}} </td>
-      <td> {{HeadToHead.odds.homeWin}} </td>
-      <td> {{HeadToHead.odds.draw}} </td>
-      <td> {{HeadToHead.odds.awayWin}} </td>
+    <tr *ngFor="let headToHead of headToHeads.fixtures">
+      
+      <td> {{headToHead.date}} </td>
+      <td> {{headToHead.status}}</td>
+      <td> {{headToHead.matchday}}</td>
+      <td> {{headToHead.homeTeamName}} </td>
+      <td> {{headToHead.awayTeamName}} </td>
+      <td> {{headToHead.result.goalsHomeTeam}} </td>
+      <td> {{headToHead.result.goalsAwayTeam}} </td>
+      <td> {{headToHead.result.halfTime.goalsHomeTeam}} </td>
+      <td> {{headToHead.result.halfTime.goalsAwayTeam}} </td>
+    <td> {{headToHead.odds.homeWin}} </td>
+      <td> {{headToHead.odds.draw}} </td>
+      <td> {{headToHead.odds.awayWin}} </td> 
+      
       
     </tr>
     

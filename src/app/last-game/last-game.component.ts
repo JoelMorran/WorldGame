@@ -34,11 +34,15 @@ export class LastGameComponent implements OnInit {
       //console.log(t.result['odds']);
       if (t.odds != null) {
         console.log(t.odds);
+        
       }
       else{
         t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
       } 
     }
+     this.lastGames['fixtures']=[x[x.length-1]];
+      console.log(this.lastGames)
+    //x=[x[x.length-1]];
     //console.log(temp); 
    /* for(let i = 0; i < temp.length; i++){
       console.log(i);

@@ -47,7 +47,7 @@ getCompetitions(): Observable<any[]> {
 
 getHeadToHead(): Observable<any[]> {
   return this.http.get<any[]>(this.teamsUrl +
-     '', {headers});
+     '/teams/445/fixtures', {headers});
 
 }
 

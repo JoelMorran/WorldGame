@@ -29,7 +29,8 @@
       <td> {{myTeams.name}} </td>
       <td> {{myTeams.code}}</td>
       <td> {{myTeams.shortName}} </td>
-      <td> {{myTeams.squadMarketValue}} </td>
+      <td *ngIf="myTeams.squadMarketValue == null"> {{"N/A"}} </td> 
+     <!-- <td> {{myTeams.squadMarketValue}} </td>-->
       <td>
         <img src="{{myTeams.crestUrl}}" alt="No IMG supplied for this team in json data" height=100 width=100/> </td>
 

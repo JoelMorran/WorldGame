@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../team.service';
+import { MyTeam } from '../my-team';
 
 @Component({
   selector: 'app-my-team',
@@ -13,21 +14,41 @@ export class MyTeamComponent implements OnInit {
   myTeams : any[];
 
   constructor(private teamService: TeamService) { }
-  //constructor() { }
   
+  
+  parseGames(temp){
+    this.myTeams = temp;
+    //console.log(temp['fixtures']);
+    let x = temp['squadMarketValue'];
+    
+      //console.log(t.date);
+      
+      //console.log(t.result['odds']);
+      if (x != null) {
+        console.log(x);
+        
+      }
+      else{
+        x = { squadMarketValue: "N/A" }
+      } 
+    }
+  
+
   getMyTeam(){
-    this.teamService.getMyTeam().subscribe(temp => this.myTeams = temp);
+    this.teamService.getMyTeam().subscribe(temp => this.parseGames(temp),
+    err => console.log(err),
+    () => console.log());
   }
 
   ngOnInit() {
     console.log("i'm running!");
     
-   
-    let game = this.getMyTeam();
-    
+   this.getMyTeam();
+   //let game = 
+    /*
       if(game[0].squadMarketValue == 'null'){
         game[0].squadMarketValue={squadMarketValue:"N/A"};
-      }
+      }*/
     
 
     //this.support(this.lastGames);

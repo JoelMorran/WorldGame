@@ -14,6 +14,24 @@ export class AllPlayersComponent implements OnInit {
 
   constructor(private teamService: TeamService) { }
   //constructor() { }
+
+  parseGames(temp){
+    this.allPlayerss = temp;
+    //console.log(temp['fixtures']);
+    let x = temp['fixtures'];
+    for(let t of x){
+      //console.log(t.date);
+      
+      //console.log(t.result['odds']);
+      if (t.squadMarketValue != null) {
+        console.log(t.odds);
+        
+      }
+      else{
+        t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
+      } 
+    }
+  }
   
   getAllPlayers(){
     this.teamService.getAllPlayers().subscribe(temp => this.allPlayerss = temp);

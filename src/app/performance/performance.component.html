@@ -1,4 +1,5 @@
 
+
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -7,13 +8,125 @@
   });
 </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+ <div id="piechart"></div>               
+<script type="text/javascript">
+console.log("help");
+	// Load google charts
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	console.log("help");
+	// Draw the chart and set the chart values
+	function drawChart() {
+	  var data = google.visualization.arrayToDataTable([
+	  ['Task', 'Hours per Day'],
+	  ['Work', 8],
+	  ['Friends', 2],
+	  ['Eat', 2],
+	  ['TV', 3],
+	  ['Gym', 2],
+	  ['Sleep', 7]
+	]);
+	
+	  // Optional; add a title and set the width and height of the chart
+	  var options = {'title':'My Average Day', 'width':400, 'height':300};
+	
+	  // Display the chart inside the <div> element with id="piechart"
+	  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+	  chart.draw(data, options);
+	}
+	</script>
 
-<script>
 
+
+
+<!--<head>
+<title>My first chart using FusionCharts Suite XT</title>
+<script type="text/javascript" src="/src/fusioncharts/f"></script>
+<script type="text/javascript" src="fusioncharts/js/themes/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript">
+	FusionCharts.ready(function() {
+		var revenueChart = new FusionCharts({
+			"type": "column2d",
+			"renderAt": "chartContainer",
+			"width": "500",
+			"height": "300",
+			"dataFormat": "json",
+			"dataSource": {
+				"chart": {
+					"caption": "Monthly revenue for last year",
+					"subCaption": "Harry's SuperMart",
+					"xAxisName": "Month",
+					"yAxisName": "Revenues (In USD)",
+					"theme": "fint"
+				},
+				"data": [{
+						"label": "Jan",
+						"value": "420000"
+					},
+					{
+						"label": "Feb",
+						"value": "810000"
+					},
+					{
+						"label": "Mar",
+						"value": "720000"
+					},
+					{
+						"label": "Apr",
+						"value": "550000"
+					},
+					{
+						"label": "May",
+						"value": "910000"
+					},
+					{
+						"label": "Jun",
+						"value": "510000"
+					},
+					{
+						"label": "Jul",
+						"value": "680000"
+					},
+					{
+						"label": "Aug",
+						"value": "620000"
+					},
+					{
+						"label": "Sep",
+						"value": "610000"
+					},
+					{
+						"label": "Oct",
+						"value": "490000"
+					},
+					{
+						"label": "Nov",
+						"value": "900000"
+					},
+					{
+						"label": "Dec",
+						"value": "730000"
+					}
+				]
+			}
+
+		});
+		revenueChart.render();
+	})
 </script>
+</head>
+
+<body>
+<div id="chartContainer">FusionCharts XT will load here!</div>
+</body>-->
 
 <!--<img src="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">-->
 
+
+
+
+
+<!--
 <div id="ChildDiv">
 	
 	<table>
@@ -51,7 +164,7 @@
 	</table>
 
 
-</div>
+</div>-->
 
 <!--<div class="wrapper" >
 <div class="profile">
