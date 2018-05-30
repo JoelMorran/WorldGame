@@ -175,7 +175,7 @@ div.content {
 }
 
 /* For mobile phones: */
-@media only screen and (max-width: 300px) {
+@media all and (min-width: 300px) {
 .jumbotron{
   
   background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
@@ -221,7 +221,7 @@ div.content {
 }
 
 
-@media only screen and (min-device-width: 351px) {
+@media all and (min-width: 351px) {
   .jumbotron{
   
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
@@ -266,7 +266,9 @@ div.content {
   /*above 300 - 350 px*/
 }
 
-@media only screen and (min-device-width: 450px) {
+@media all and (min-width: 450px) {
+  
+  
   .jumbotron{
   
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
@@ -311,7 +313,7 @@ div.content {
   /*above 300 - 350 px*/
 }
 
-@media only screen and (min-device-width: 600px) {
+@media all and (min-width: 600px) {
   .jumbotron{
   
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
@@ -356,7 +358,7 @@ div.content {
   /*above 300 - 350 px*/
 }
 
-@media only screen and (min-device-width: 1000px) {
+@media all and (min-width: 1000px) {
   .jumbotron{
   
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
@@ -405,7 +407,7 @@ div.content {
 
 
 
-@media only screen and (min-device-width: 1439px) {
+@media all and (min-width: 1439px) {
   .jumbotron{
   
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
