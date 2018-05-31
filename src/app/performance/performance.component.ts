@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../team.service';
+import { Result } from '../../app/result';
+import { Odds } from '../../app/odds';
+import { LastGame } from '../../app/last-game';
+import { HalfTime } from '../../app/half-time';
 
 @Component({
   selector: 'app-performance',
@@ -10,7 +14,7 @@ export class PerformanceComponent implements OnInit {
 
   selectedPerformance: any;
 
-  performances : any[];
+  performances : LastGame[];
 
   constructor(private teamService: TeamService) { }
   //constructor() { }

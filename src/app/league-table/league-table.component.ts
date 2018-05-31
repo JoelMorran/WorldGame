@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { TeamService } from '../../team.service';
+import { Home } from '../../app/home';
+import { Away } from '../../app/away';
+import { LeagueTable } from '../../app/league-table';
+
 
 @Component({
   selector: 'app-league-table',
@@ -11,13 +15,74 @@ export class LeagueTableComponent implements OnInit {
 
     selectedLeagueTable: any;
 
-    leagueTables : any[];
+    leagueTables : LeagueTable[];
   
     constructor(private teamService: TeamService) { }
     //constructor() { }
     
+    parseGames(temp){
+      this.leagueTables = temp;
+      //console.log(temp['fixtures']);
+      let x = temp['standing'];
+      for(let t of x){
+        //console.log(t.date);
+        //t.date = new Date(t.date);
+        //console.log(t.result['odds']);*/
+        console.log("1");
+        /*if (t.squadMarketValue != null) {
+          console.log(t.squadMarketValue);
+          console.log("2");
+        }
+        else{
+          t.squadMarketValue = "N/A";
+          console.log("3");
+        }
+  
+        if (t.code != null) {
+          console.log(t.code);
+          console.log("2");
+        }
+        else{
+          t.code = "N/A";
+          console.log("3");
+        } 
+  
+        if (t.shortName != "" || null) { //WTFFFFFFFFFFFFF
+          console.log(t.shortName);
+          console.log("2");
+        }
+        else{
+          t.shortName = "N/A";
+          console.log("3");
+        }  
+  */
+        if (t.crestURI != "" || null) {
+          console.log(t.crestUrl);
+          console.log("2");
+        }
+        else{
+          t.crestURI = "https://www.readjunk.com/wp-content/uploads/2015/09/no-image-found1-300x200.png";
+          console.log("3");
+        }
+  
+        if (t.crestURI != null) { //WTFFFFFFFFFFFFF
+          console.log(t.crestURI);
+          console.log("2");
+        }
+        else{
+          t.crestURI = "https://www.readjunk.com/wp-content/uploads/2015/09/no-image-found1-300x200.png";
+          console.log("3");
+        } 
+        
+      }
+       //this.allPlayerss['fixtures']=[x[x.length-1]];
+        //console.log(this.allPlayerss)
+    }
+
     getLeagueTable(){
-      this.teamService.getLeagueTable().subscribe(temp => this.leagueTables = temp);
+      this.teamService.getLeagueTable().subscribe(temp => this.parseGames(temp),
+      err => console.log(err),
+      () => console.log());
     }
     ngOnInit() {
       console.log("i'm running!");

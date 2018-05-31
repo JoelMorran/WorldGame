@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../team.service';
+import { Result } from '../../app/result';
+import { Odds } from '../../app/odds';
+import { LastGame } from '../../app/last-game';
+import { HalfTime } from '../../app/half-time';
 
 @Component({
   selector: 'app-season',
@@ -10,7 +14,7 @@ export class SeasonComponent implements OnInit {
 
   selectedSeason: any;
 
-  seasons : any[];
+  seasons : LastGame[];
 
   contentLoad: boolean = false;
 
@@ -33,7 +37,7 @@ export class SeasonComponent implements OnInit {
         t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
       } 
     }
-     this.seasons['fixtures']=x.slice(x.length-5);
+     //this.seasons['fixtures']=x.slice(x.length-5);
      console.log(this.seasons)
   }
   

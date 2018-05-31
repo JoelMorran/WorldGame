@@ -11,7 +11,7 @@ export class MyTeamComponent implements OnInit {
 
   selectedMyTeam: any;
 
-  myTeams : any[];
+  myTeams : MyTeam[];
 
   constructor(private teamService: TeamService) { }
   
@@ -19,17 +19,17 @@ export class MyTeamComponent implements OnInit {
   parseGames(temp){
     this.myTeams = temp;
     //console.log(temp['fixtures']);
-    let x = temp['squadMarketValue'];
+    let x = temp;
     
       //console.log(t.date);
       
       //console.log(t.result['odds']);
-      if (x != null) {
+      if (x.squadMarketValue != null) {
         console.log(x);
         
       }
       else{
-        x = { squadMarketValue: "N/A" }
+        x.squadMarketValue = "N/A";
       } 
     }
   

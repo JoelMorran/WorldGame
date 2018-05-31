@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../../team.service';
+import { AllPlayers } from '../all-players'
 
 @Component({
   selector: 'app-all-players',
@@ -10,7 +11,7 @@ export class AllPlayersComponent implements OnInit {
 
   selectedAllPlayers: any;
 
-  allPlayerss : any[];
+  allPlayerss : AllPlayers[];
 
   constructor(private teamService: TeamService) { }
   //constructor() { }
@@ -18,27 +19,54 @@ export class AllPlayersComponent implements OnInit {
   parseGames(temp){
     this.allPlayerss = temp;
     //console.log(temp['fixtures']);
-    let x = temp['fixtures'];
+    let x = temp['players'];
     for(let t of x){
       //console.log(t.date);
-      
-      //console.log(t.result['odds']);
-      if (t.squadMarketValue != null) {
-        console.log(t.odds);
-        
+      //t.date = new Date(t.date);
+      //console.log(t.result['odds']);*/
+      console.log("1");
+      if (t.marketValue != null) {
+        console.log(t.marketValue);
+        console.log("2");
       }
       else{
-        t.odds = { homeWin: "N/A", awayWin: "N/A", draw: "N/A" }
+        t.marketValue = "N/A";
+        console.log("3");
+      }
+
+      if (t.jerseyNumber != null) {
+        console.log(t.jerseyNumber);
+        console.log("2");
+      }
+      else{
+        t.jerseyNumber = "N/A";
+        console.log("3");
       } 
+
+      if (t.contractUntil != null) {
+        console.log(t.contractUntil);
+        console.log("2");
+      }
+      else{
+        t.contractUntil = "N/A";
+        console.log("3");
+      }  
+      
     }
+     //this.allPlayerss['fixtures']=[x[x.length-1]];
+      //console.log(this.allPlayerss)
   }
+ 
   
-  getAllPlayers(){
-    this.teamService.getAllPlayers().subscribe(temp => this.allPlayerss = temp);
+  getAllPlayerss(){
+    this.teamService.getAllPlayers().subscribe(
+    temp => this.parseGames(temp),
+    err => console.log(err),
+    () => console.log());
   }
   ngOnInit() {
     console.log("i'm running!");
-    this.getAllPlayers();
+    this.getAllPlayerss();
    
     //this.support(this.lastGames);
    /*let game = this.lastGames;
