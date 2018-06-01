@@ -39,6 +39,10 @@ h4 {
   float: right;
 }*/
 
+.row {
+  background-color: #DDFFDD;
+}
+
 #seven {
 background-color: #D3D3D3;
   /*background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");*/
@@ -80,7 +84,7 @@ ul.sidenav {
   margin-top: 0px;
   padding: 0;
   width: 16.5%;
-  background-color: #D3D3D3;
+  background-color: #C0C0C0;
   position: fixed;
   height: 100%;
   overflow: auto; 
@@ -111,7 +115,7 @@ div.content {
   height: 1000px;
 }
 
-@media screen and (max-width: 900px) {
+@media all and (max-width: 30000px) {
   ul.sidenav {
       width: 100%;
       height: auto;
@@ -119,18 +123,23 @@ div.content {
   }
   ul.sidenav li a {
       float: left;
-      padding: 15px;
+      padding: 20px;
   }
   div.content {margin-left: 0;}
 }
 
-@media screen and (max-width: 400px) {
+@media all and (max-width: 10000px) {
   ul.sidenav li a {
       text-align: center;
       float: none;
   }
 }
 
+.ad{
+  background-image: url("https://image.ibb.co/imRECd/Cny_KPpr_WYAAB20_X.jpg");
+  background-repeat: repeat;
+  background-size: 292px 300px;
+}
 
 .jumbotron{
   
@@ -173,6 +182,51 @@ div.content {
   /*padding-top: 75px;*/
   text-align: center;
 }
+@media all and (min-width: 225px) {
+.jumbotron{
+  
+  background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
+  /*background-repeat: no-repeat;
+  background-size: 100% 100%;*/
+  max-height: 150%;
+ height: 102.5%;
+ }
+
+ #one{
+  float: left;
+  width: 15%;
+  height: 15%;
+  max-width: 50px;
+  max-height: 50px;
+  /*display:block;*/
+ 
+}
+#two{
+  float: right;
+  width: 15%;
+    height: 15%;
+    max-width: 50px;
+    max-height: 50px;
+   /* display:block; */
+}
+
+#five {
+  font-size: 50%;
+  text-align: center;
+  font: bold;
+  /*max-width: 200px;*/
+  
+}
+
+#three{
+  font-size: 315%;
+  color: #0063A6;
+  /*padding-top: 75px;*/
+  text-align: center;
+}
+/*above 300 - 350 px*/
+}
+
 
 /* For mobile phones: */
 @media all and (min-width: 300px) {
@@ -350,7 +404,7 @@ div.content {
   }
   
   #three{
-    font-size: 315%;
+    font-size: 215%;
     color: #0063A6;
     /*padding-top: 75px;*/
     text-align: left;
@@ -365,7 +419,7 @@ div.content {
     /*background-repeat: no-repeat;
     background-size: 100% 100%;*/
     max-height: 150%;
-   height: 105%;
+   height: 100%;
    }
   
    #one{
@@ -413,7 +467,8 @@ div.content {
     background-image: url("http://www.greenlogic.net.au/wp-content/uploads/2017/07/grass-background-28-1024x640.jpg");
     /*background-repeat: no-repeat;
     background-size: 100% 100%;*/
-   
+    max-height: 150%;
+    height: 100%;
    }
 
    #one{

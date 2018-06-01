@@ -28,25 +28,25 @@ export class CompetitionsComponent implements OnInit {
       console.log("1");
       if (t.squadMarketValue != null) {
         console.log(t.squadMarketValue);
-        console.log("2");
+       // console.log("2");
       }
       else{
         t.squadMarketValue = "N/A";
-        console.log("3");
+       // console.log("3");
       }
 
       if (t.code != null) {
         console.log(t.code);
-        console.log("2");
+       // console.log("2");
       }
       else{
         t.code = "N/A";
-        console.log("3");
+       // console.log("3");
       } 
 
-      if (t.shortName != "" || null) { //WTFFFFFFFFFFFFF
+      if (t.shortName != "" && t.shortName != null) { //WTFFFFFFFFFFFFF
         console.log(t.shortName);
-        console.log("2");
+       // console.log("2");
       }
       else{
         t.shortName = "N/A";
@@ -62,14 +62,6 @@ export class CompetitionsComponent implements OnInit {
         console.log("3");
       }
 
-      if (t.shortName != null) { //WTFFFFFFFFFFFFF
-        console.log(t.shortName);
-        console.log("2");
-      }
-      else{
-        t.shortName = "N/A";
-        console.log("3");
-      } 
       
     }
      //this.allPlayerss['fixtures']=[x[x.length-1]];

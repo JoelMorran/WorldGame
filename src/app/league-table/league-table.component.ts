@@ -56,7 +56,7 @@ export class LeagueTableComponent implements OnInit {
           console.log("3");
         }  
   */
-        if (t.crestURI != "" || null) {
+        if (t.crestURI != "" && t.crestURI != null) {
           console.log(t.crestUrl);
           console.log("2");
         }
@@ -65,14 +65,14 @@ export class LeagueTableComponent implements OnInit {
           console.log("3");
         }
   
-        if (t.crestURI != null) { //WTFFFFFFFFFFFFF
+       /* if (t.crestURI != null) { //WTFFFFFFFFFFFFF
           console.log(t.crestURI);
           console.log("2");
         }
         else{
           t.crestURI = "https://www.readjunk.com/wp-content/uploads/2015/09/no-image-found1-300x200.png";
           console.log("3");
-        } 
+        } */
         
       }
        //this.allPlayerss['fixtures']=[x[x.length-1]];

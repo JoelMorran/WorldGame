@@ -1,12 +1,38 @@
-table {
+/*table {
     border-collapse: collapse;
     width: 100%;
 }
+*/
 
-tr, td {
+tr, th {
     text-align: center;
-    padding: 8px;
-
+    padding: 40px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+td{
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+tr:nth-child(even){background-color: #9ad887}
+tr:nth-child(odd){background-color: #bfeeb1}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 432px;
+    overflow-x:20px;
+    overflow-y:30px;
+    border-spacing: 0;
+    max-width: 100%;
+    max-height: 1000px;
+    display: block;
+}
+
+div { 
+    overflow-y:auto;
+    overflow-x:auto;
+    
+    }
