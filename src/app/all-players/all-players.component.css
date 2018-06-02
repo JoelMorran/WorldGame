@@ -19,8 +19,8 @@ td{
 }
 
 
-tr:nth-child(even){background-color: #9ad887}
-tr:nth-child(odd){background-color: #bfeeb1}
+tr:nth-child(even){background-color: #0063A6}
+tr:nth-child(odd){background-color: rgb(4, 153, 253)}
 
 table {
     border-collapse: collapse;
